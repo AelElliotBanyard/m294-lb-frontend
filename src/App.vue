@@ -20,7 +20,7 @@ export default defineComponent({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-color: rgb(7, 89, 173);
+  background-color: rgb(2, 132, 199);
   min-height: 100vh;
 }
 

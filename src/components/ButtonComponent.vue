@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="callback($event)">
+    <button @click="callback($event)" v-bind="$attrs">
       {{ label }}
     </button>
   </div>
@@ -10,6 +10,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
+    inheritAttrs: false,
   props: {
     onClick: {
       type: Function,

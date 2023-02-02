@@ -1,12 +1,12 @@
 <template>
-  <div v-if="!loading">
+  <div v-if="!loading" class="flex justify-center flex-col items-center">
     <InputComponent label="Title" v-model="task.title" />
     <InputComponent
       label="Completed"
       v-model="task.completed"
       input-type="checkbox"
     />
-    <ButtonComponent label="Speichern" :onClick="save" />
+    <ButtonComponent label="Speichern" :onClick="save" class="border-gray-300 border-2 px-4 py-2 rounded-md font-bold text-gray-100 bg-green-600"/>
   </div>
 </template>
 
