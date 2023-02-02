@@ -18,13 +18,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
+import { Task } from "../../types/index";
 
 export default defineComponent({
   name: "TasksComponent",
   props: {
     tasks: {
-      type: Array<{ id: number; completed: boolean; title: String }>,
+      type: Array as PropType<Array<Task>>,
       required: true,
     },
   },
