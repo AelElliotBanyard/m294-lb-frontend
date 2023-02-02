@@ -1,6 +1,6 @@
 <template>
-  <router-view />
   <NavigationComponent />
+  <router-view />
 </template>
 
 <script lang="ts">
@@ -20,10 +20,8 @@ export default defineComponent({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
+  background-color: rgb(21, 151, 58);
+  min-height: 100vh;
 }
 
 nav a {
@@ -32,6 +30,6 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: rgb(21, 201, 58);
 }
 </style>
