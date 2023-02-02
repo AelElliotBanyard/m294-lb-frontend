@@ -13,7 +13,7 @@
     >
       <g>
         <rect
-          v-if="!task.completed"
+          v-if="task.completed"
           x="0"
           y="0"
           height="100"
