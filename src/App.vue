@@ -1,11 +1,18 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/tasks">Tasks</router-link>
-  </nav>
   <router-view />
+  <NavigationComponent />
 </template>
 
+<script lang="ts">
+import { defineComponent } from "vue";
+import NavigationComponent from "./components/NavigationComponent.vue";
+
+export default defineComponent({
+  components: {
+    NavigationComponent,
+  },
+});
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

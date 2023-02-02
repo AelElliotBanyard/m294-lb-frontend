@@ -1,5 +1,8 @@
 <template>
-  <div></div>
+  <nav class="h-12">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/tasks">Tasks</router-link>
+  </nav>
 </template>
 
 <script lang="ts">

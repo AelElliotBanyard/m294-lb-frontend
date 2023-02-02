@@ -1,12 +1,12 @@
 import TasksView from "../views/TasksView.vue";
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
-import LoginView from "../views/LoginView.vue";
+import App from "../App.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "home",
-    component: LoginView,
+    component: App,
   },
   {
     path: "/tasks",
