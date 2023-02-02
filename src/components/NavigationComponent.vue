@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="h-12 flex gap-4 justify-center items-center bg-green-800 mb-4 shadow-md"
+    class="h-12 flex gap-4 justify-center items-center bg-sky-800 mb-4 shadow-md"
   >
     <div class="w-20 h-12 flex justify-center items-center">
       <router-link

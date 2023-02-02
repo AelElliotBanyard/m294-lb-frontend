@@ -20,7 +20,7 @@ export default defineComponent({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-color: rgb(21, 151, 58);
+  background-color: rgb(7, 89, 173);
   min-height: 100vh;
 }
 
@@ -30,6 +30,6 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: rgb(21, 201, 58);
+  color: rgb(77, 131, 218);
 }
 </style>
