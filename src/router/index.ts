@@ -1,4 +1,4 @@
-import TasksView from "@/views/NoAuth/TasksView.vue";
+import TasksView from "../views/TasksView.vue";
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import LoginView from "../views/LoginView.vue";
 
