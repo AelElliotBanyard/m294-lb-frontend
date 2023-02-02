@@ -1,7 +1,11 @@
 <template>
-  <div>
-    <p>{{ label }}</p>
-    <input :type="type" :v-model="field" />
+  <div class="border border-gray-500 m-4 relative w-min h-min">
+    <p class="absolute bottom-7 left-2 bg-white px-2">{{ label }}</p>
+    <input
+      :type="type"
+      :v-model="field"
+      class="w-64 h-10 focus-visible:outline-none ml-2"
+    />
   </div>
 </template>
 
