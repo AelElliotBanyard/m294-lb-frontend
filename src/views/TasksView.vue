@@ -1,5 +1,7 @@
 <template>
-  <div class="flex justify-center items-center flex-col">
+  <div
+    class="flex items-center flex-col relative overflow-hidden max-w-full min-w-full min-h-screen"
+  >
     <TasksComponent :tasks="tasks" />
   </div>
 </template>
