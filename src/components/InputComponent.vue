@@ -26,20 +26,16 @@ export default defineComponent({
     inputType: {
       type: String,
       required: false,
-      default: "Text",
+      default: "text",
     },
   },
   methods: {
     updateInput(event: Event | any) {
-      this.$emit("update:modelValue", event.target.value);
-    },
-  },
-  computed: {
-    get() {
-      return this.$props.modelValue;
-    },
-    set(value: String | Number | Boolean) {
-      this.$emit("update:modelValue", value);
+      if (this.inputType != "checkbox") {
+        this.$emit("update:modelValue", event.target.value);
+      } else {
+        this.$emit("update:modelValue", event.target.checked);
+      }
     },
   },
 });

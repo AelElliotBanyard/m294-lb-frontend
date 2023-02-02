@@ -1,6 +1,7 @@
 import TasksView from "../views/TasksView.vue";
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import Home from "@/views/HomeView.vue";
+import EditView from "../views/EditView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -21,7 +22,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/taskEdit/:id",
     name: "editTask",
-    component: Home,
+    component: EditView,
   },
   {
     path: "/taskCreate",
