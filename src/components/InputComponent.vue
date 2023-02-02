@@ -4,7 +4,8 @@
     <input
       :type="inputType"
       :value="modelValue"
-      @input="(event: Event | any) => $emit('ubdate:ModelValue', event.target.value)"
+      :name="label"
+      @input="updateInput"
     />
   </div>
 </template>
@@ -19,13 +20,26 @@ export default defineComponent({
       required: true,
     },
     modelValue: {
-      type: [String || Number],
+      type: [String, Number, Boolean],
       required: true,
     },
     inputType: {
       type: String,
       required: false,
       default: "Text",
+    },
+  },
+  methods: {
+    updateInput(event: Event | any) {
+      this.$emit("update:modelValue", event.target.value);
+    },
+  },
+  computed: {
+    get() {
+      return this.$props.modelValue;
+    },
+    set(value: String | Number | Boolean) {
+      this.$emit("update:modelValue", value);
     },
   },
 });

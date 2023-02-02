@@ -1,9 +1,17 @@
 <template>
-  <div v-if="!loading"></div>
+  <div v-if="!loading">
+    <InputComponent :label="task.title" v-model="task.title" />
+    <InputComponent
+      label="Completed"
+      v-model="task.completed"
+      input-type="checkbox"
+    />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import InputComponent from "@/components/InputComponent.vue";
 
 export default defineComponent({
   data() {
@@ -24,6 +32,9 @@ export default defineComponent({
         this.task = data;
         this.loading = false;
       });
+  },
+  components: {
+    InputComponent,
   },
 });
 </script>
