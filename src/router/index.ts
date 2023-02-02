@@ -2,6 +2,7 @@ import TasksView from "../views/TasksView.vue";
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import Home from "@/views/HomeView.vue";
 import EditView from "../views/EditView.vue";
+import DeleteView from "../views/DeleteView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -17,7 +18,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/taskDelete/:id",
     name: "deleteTask",
-    component: Home,
+    component: DeleteView,
   },
   {
     path: "/taskEdit/:id",
