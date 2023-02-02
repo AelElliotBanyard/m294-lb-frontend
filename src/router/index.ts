@@ -13,6 +13,21 @@ const routes: Array<RouteRecordRaw> = [
     name: "tasks",
     component: TasksView,
   },
+  {
+    path: "/taskDelete/:id",
+    name: "deleteTask",
+    component: Home,
+  },
+  {
+    path: "/taskEdit/:id",
+    name: "editTask",
+    component: Home,
+  },
+  {
+    path: "/taskCreate",
+    name: "createTask",
+    component: Home,
+  },
 ];
 
 const router = createRouter({

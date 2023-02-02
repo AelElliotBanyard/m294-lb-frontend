@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/createTask" class="absolute right-8">
+  <router-link to="/taskCreate" class="absolute right-8">
     <svg
       viewBox="0 0 512 512"
       version="1.1"
