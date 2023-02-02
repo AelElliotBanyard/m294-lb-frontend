@@ -1,35 +1,33 @@
 <template>
-    <div class="absolute top-0 w-full left-0 right-0">
-        <div v-if="type === 'success'" :class="{'translate-y-0': show, 'translate-y-full': !show}" class="bg-green-500 translate-y-99 transition-all duration-1000">
+    <div class="fixed top-0 w-full left-0 right-0 flex justify-center items-center ">
+        <div v-if="type === 'success'" :class="{'translate-y-0': show, '-translate-y-full': !show}" class="bg-green-500 rounded-b-md -translate-y-99 transition-all duration-1000 w-1/3">
             <div v-if="msg === 'no-msg'" >
-                <p>{{ title }}</p>
+                <p class="text-xl text-gray-100 font-bold">{{ title }}</p>
             </div>
             <div v-else>
-                <p>{{ title }}</p>
-                <p>{{ msg }}</p>
+                <p class="text-xl text-gray-100 font-bold border-b-2 border-gray-400 border-opacity-50">{{ title }}</p>
+                <p class="text-md text-gray-100">{{ msg }}</p>
             </div>
         </div>
-        <div v-else-if="type === 'error'" class=" bg-red-500">
+        <div v-else-if="type === 'error'" :class="{'translate-y-0': show, '-translate-y-full': !show}" class="bg-red-500 rounded-b-md -translate-y-99 transition-all duration-1000 w-1/3">
             <div v-if="msg === 'no-msg'" >
-                <p>{{ title }}</p>
+                <p class="text-xl text-gray-100 font-bold">{{ title }}</p>
             </div>
             <div v-else>
-                <p>{{ title }}</p>
-                <p>{{ msg }}</p>
+                <p class="text-xl text-gray-100 font-bold border-b-2 border-gray-400 border-opacity-50">{{ title }}</p>
+                <p class="text-md text-gray-100">{{ msg }}</p>
             </div>
-
         </div>
 
-        <div v-else-if="type === 'warning'" class=" bg-yellow-500">
+        <div v-else-if="type === 'warning'" :class="{'translate-y-0': show, '-translate-y-full': !show}" class="bg-yellow-500 rounded-b-md -translate-y-99 transition-all duration-1000 w-1/3">
             <div v-if="msg === 'no-msg'" >
-                <p>{{ title }}</p>
+                <p class="text-xl text-gray-100 font-bold">{{ title }}</p>
             </div>
             <div v-else>
-                <p>{{ title }}</p>
-                <p>{{ msg }}</p>
+                <p class="text-xl text-gray-100 font-bold border-b-2 border-gray-400 border-opacity-50">{{ title }}</p>
+                <p class="text-md text-gray-100">{{ msg }}</p>
             </div>
-
-</div>
+        </div>
     </div>
 </template>
 
