@@ -1,4 +1,5 @@
 <template>
+  <AlertComponent />
   <div
     v-if="!signedIn"
     class="w-full h-screen flex justify-center items-center"
@@ -15,11 +16,13 @@
 import { defineComponent } from "vue";
 import NavigationComponent from "./components/NavigationComponent.vue";
 import LoginComponent from "@/components/LoginComponent.vue";
+import AlertComponent from "@/components/AlertComponent.vue";
 
 export default defineComponent({
   components: {
     NavigationComponent,
     LoginComponent,
+    AlertComponent
   },
   data() {
     return {
