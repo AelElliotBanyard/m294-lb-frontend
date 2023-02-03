@@ -6,7 +6,11 @@
       v-model="task.completed"
       input-type="checkbox"
     />
-    <ButtonComponent label="Speichern" :onClick="save" class="border-gray-300 border-2 px-4 py-2 rounded-md font-bold text-gray-100 bg-green-600"/>
+    <ButtonComponent
+      label="Speichern"
+      :onClick="save"
+      class="border-gray-300 border-2 px-4 py-2 rounded-md font-bold text-gray-100 bg-green-600"
+    />
   </div>
 </template>
 
