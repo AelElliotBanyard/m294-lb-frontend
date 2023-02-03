@@ -32,7 +32,14 @@ export default defineComponent({
     };
   },
   created() {
-    fetch("http://zli.banyard.tech/task/" + this.id)
+      const params = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + this.$jwtData.token,
+        },
+      };
+    fetch("http://zli.banyard.tech/auth/jwt/task/" + this.id, params)
       .then((response) => response.json())
       .then((data) => {
         this.task = data;
@@ -47,13 +54,17 @@ export default defineComponent({
     save() {
       const params = {
         method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + this.$jwtData.token,
+        },
         body: JSON.stringify({
           id: this.id,
           completed: this.task.completed,
           title: this.task.title,
         }),
       };
-      fetch("http://zli.banyard.tech/task/", params)
+      fetch("http://zli.banyard.tech/auth/jwt/tasks", params)
         .then((response) => response.json())
         .then((data) => {
           if (data === this.task) {
