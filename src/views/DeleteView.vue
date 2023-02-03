@@ -60,7 +60,14 @@ export default defineComponent({
     };
   },
   created() {
-    fetch("http://zli.banyard.tech/task/" + this.id)
+      const params = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + this.$jwtData.token,
+        },
+      };
+      fetch("http://zli.banyard.tech/auth/jwt/task/" + this.id, params)
       .then((response) => response.json())
       .then((data) => {
         this.task = data;
@@ -72,7 +79,14 @@ export default defineComponent({
   },
   methods: {
     deleteTask() {
-      fetch("http://zli.banyard.tech/auth/jwt/task/" + this.task.id)
+      const params = {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + this.$jwtData.token,
+        },
+      };
+      fetch("http://zli.banyard.tech/auth/jwt/task/" + this.task.id, params)
         .then((response) => response.json())
         .then((data) => {
           if (data.statusCode === 401) {
