@@ -19,10 +19,8 @@ export default defineComponent({
           completed: false,
           title: "",
         },
+      id: this.$route.params.id,
     };
-  },
-  props: {
-    id: Number
   },
   components: { TaskComponent },
   mounted() {
