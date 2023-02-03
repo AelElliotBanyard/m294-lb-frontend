@@ -42,6 +42,7 @@
     :key="task.id"
     class="w-1/3 h-8 bg-sky-700 rounded relative flex justify-center items-center shadow-md"
   >
+  <router-link :to="'/task/' + task.id">
     <p class="text-lg font-bold text-gray-100">{{ task.title }}</p>
     <svg
       viewBox="0 0 100 100"
@@ -150,6 +151,7 @@
         </svg>
       </router-link>
     </div>
+  </router-link>
   </div>
 </template>
 
@@ -167,3 +169,5 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped></style>

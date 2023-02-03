@@ -1,7 +1,6 @@
 <template>
      <div
-    class="flex items-center flex-col relative overflow-hidden max-w-full min-w-full min-h-screen"
-  >
+    class="flex items-center flex-col relative overflow-hidden max-w-full min-w-full min-h-screen">
     <TaskComponent :task="task" />
   </div>
 </template>
@@ -36,3 +35,4 @@ export default defineComponent({
         .then((data) => (this.task = data));
   },
 });
+</script>
