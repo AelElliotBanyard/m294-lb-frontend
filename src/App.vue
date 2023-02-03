@@ -15,13 +15,11 @@
 import { defineComponent } from "vue";
 import NavigationComponent from "./components/NavigationComponent.vue";
 import LoginComponent from "@/components/LoginComponent.vue";
-import CustomAlert from "@/components/CustomAlert.vue";
 
 export default defineComponent({
   components: {
     NavigationComponent,
     LoginComponent,
-    CustomAlert
   },
   data() {
     return {
