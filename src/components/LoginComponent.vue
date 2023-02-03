@@ -1,32 +1,25 @@
 <template>
   <div class="border w-80">
     <div id="title">
-      <h1 class="text-2xl text-bold py-4">Login</h1>
+      <h1 class="text-2xl font-bold py-4 text-gray-100">Login</h1>
     </div>
-    <div id="fields" class="flex justify-center align-center flex-col">
-      <div class="border-4 border-gray-500 relative w-min h-min m-4 rounded">
-        <p class="absolute bottom-7 left-2 px-2 bg-white cursor-default">
-          E-Mail
-        </p>
-        <input
-          type="text"
-          v-model="email"
-          class="h-10 w-64 px-2 focus-visible:outline-none"
-        />
-      </div>
-      <div class="border-4 border-gray-500 relative w-min h-min m-4 rounded">
-        <p class="absolute bottom-7 left-2 px-2 bg-white cursor-default">
-          Passwort
-        </p>
-        <input
-          type="password"
-          v-model="password"
-          class="h-10 w-64 px-2 focus-visible:outline-none"
-        />
-      </div>
+    <div id="fields" class="flex justify-center items-center flex-col w-100">
+      <InputComponent
+        label="E-Mail"
+        v-model="email"
+        input-type="text"
+      /><InputComponent
+        label="Password"
+        v-model="password"
+        input-type="password"
+      />
     </div>
-    <div id="button">
-      <ButtonComponent :onClick="validateLogin" label="Anmelden" />
+    <div id="button" class="mb-4">
+      <ButtonComponent
+        :onClick="validateLogin"
+        label="Anmelden"
+        class="border-gray-300 border-2 px-4 py-2 rounded-md font-bold text-gray-100 bg-green-600"
+      />
     </div>
   </div>
 </template>
@@ -34,6 +27,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import ButtonComponent from "./ButtonComponent.vue";
+import InputComponent from "@/components/InputComponent.vue";
 
 export default defineComponent({
   name: "LoginComponent",
@@ -52,6 +46,7 @@ export default defineComponent({
   },
   components: {
     ButtonComponent,
+    InputComponent,
   },
   methods: {
     validateLogin() {
