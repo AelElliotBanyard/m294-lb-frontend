@@ -20,5 +20,8 @@ npm run build
 npm run lint
 ```
 
+### Umgebung
+Bei allen fetch den url auf dem das backend lauft ändern
+
 ### Repo auf Github
 [AelElliotBanyard m294-lb-frontend](https://github.com/AelElliotBanyard/m294-lb-frontend).
