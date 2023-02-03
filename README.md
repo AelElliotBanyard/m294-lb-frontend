@@ -1,21 +1,21 @@
 # m294-lb-frontend Ael Banyard
 
-## Project setup
+## Projekt setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Kompiliert und Hot-Reloads für die Entwicklung
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Kompiliert und minimiert für die Produktion
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### Lints und repariert Dateien
 ```
 npm run lint
 ```
