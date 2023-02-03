@@ -3,7 +3,7 @@
     v-if="!signedIn"
     class="w-full h-screen flex justify-center items-center"
   >
-    <LoginComponent v-model:token="token" v-model:signed="signed" />
+    <LoginComponent v-model:token="token" v-model:signed="signed" v-model:email="email" />
   </div>
   <div v-else>
     <NavigationComponent />
@@ -26,12 +26,35 @@ export default defineComponent({
       token: "",
       signed: false,
       signedIn: false,
+      email: ''
     };
   },
   watch: {
     signed: function (val, oldval) {
       if (val) {
         this.signedIn = true;
+        setInterval(() => {
+          const params = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + this.$jwtData.token,
+        },
+      };
+      fetch("http://zli.banyard.tech/auth/jwt/verify", params)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.statusCode != undefined) {
+            if (data.statusCode === 401) {
+              alert("Session expired");
+              this.signedIn = false
+            } else {
+              alert("Error");
+              this.signedIn = false
+            }
+          }
+        });
+        }, 120000)
       } else {
         this.signedIn = false;
         console.log(oldval)

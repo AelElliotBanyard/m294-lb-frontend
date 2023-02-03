@@ -6,7 +6,7 @@
     <div id="fields" class="flex justify-center items-center flex-col w-100">
       <InputComponent
         label="E-Mail"
-        v-model="email"
+        v-model="inputEmail"
         input-type="text"
       /><InputComponent
         label="Password"
@@ -33,7 +33,7 @@ export default defineComponent({
   name: "LoginComponent",
   data() {
     return {
-      email: "",
+      inputEmail: "",
       password: "",
     };
   },
@@ -43,6 +43,7 @@ export default defineComponent({
       type: Boolean,
       required: true,
     },
+    email: String
   },
   components: {
     ButtonComponent,
@@ -56,7 +57,7 @@ export default defineComponent({
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email: this.email,
+          email: this.inputEmail,
           password: this.password,
         }),
       };
@@ -73,6 +74,7 @@ export default defineComponent({
             this.$jwtData.token = data.token
             this.$emit("update:token", data.token);
             this.$emit("update:signed", true);
+            this.$emit("update:email", this.inputEmail);
           }
         });
     },
