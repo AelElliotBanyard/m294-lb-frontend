@@ -48,10 +48,15 @@ export default defineComponent({
   },
   methods: {
     createTask() {
-        const params = {
-            method: 'POST',
-            body: JSON.stringify(this.task)
-        }
+      const params = {
+        
+        method: 'POST',
+            body: JSON.stringify(this.task),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + this.$jwtData.token,
+        },
+      };
       fetch("http://zli.banyard.tech/auth/jwt/tasks", params)
         .then((response) => response.json())
         .then((data) => {
