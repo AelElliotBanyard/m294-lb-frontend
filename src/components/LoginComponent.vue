@@ -43,12 +43,42 @@ export default defineComponent({
       password: "",
     };
   },
+  props: {
+    token: String,
+    signed: {
+      type: Boolean,
+      required: true,
+    },
+  },
   components: {
     ButtonComponent,
   },
   methods: {
     validateLogin() {
-      console.log(this.email, this.password);
+      const params = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: this.email,
+          password: this.password,
+        }),
+      };
+      fetch("http://zli.banyard.tech/auth/jwt/sign", params)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.statusCode != undefined) {
+            if (data.statusCode === 400) {
+              alert("Email or Password wrong");
+            } else {
+              alert("Error");
+            }
+          } else {
+            this.$emit("update:token", data.token);
+            this.$emit("update:signed", true);
+          }
+        });
     },
   },
 });

@@ -1,15 +1,41 @@
 <template>
-  <NavigationComponent />
-  <router-view />
+  <div
+    v-if="!signedIn"
+    class="w-full h-screen flex justify-center items-center"
+  >
+    <LoginComponent v-model:token="token" v-model:signed="signed" />
+  </div>
+  <div v-else>
+    <NavigationComponent />
+    <router-view />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import NavigationComponent from "./components/NavigationComponent.vue";
+import LoginComponent from "@/components/LoginComponent.vue";
 
 export default defineComponent({
   components: {
     NavigationComponent,
+    LoginComponent,
+  },
+  data() {
+    return {
+      token: "",
+      signed: false,
+      signedIn: false,
+    };
+  },
+  watch: {
+    signed: function (val, oldval) {
+      if (val) {
+        this.signedIn = true;
+      } else {
+        this.signedIn = false;
+      }
+    },
   },
 });
 </script>
