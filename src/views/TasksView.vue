@@ -25,12 +25,12 @@ export default defineComponent({
   setup() {
     return {};
   },
-  created() {
+  components: { TasksComponent },
+  mounted() {
     fetch("http://zli.banyard.tech/tasks")
       .then((response) => response.json())
       .then((data) => (this.tasks = data));
   },
-  components: { TasksComponent },
 });
 </script>
 
