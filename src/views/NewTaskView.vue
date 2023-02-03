@@ -34,7 +34,16 @@ export default defineComponent({
     };
   },
   created() {
-    fetch("http://zli.banyard.tech/auth/jwt/tasks").then((response) => response.json()).then((data) => {
+      const params = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + this.$jwtData.token,
+        },
+      };
+      fetch("http://zli.banyard.tech/auth/jwt/tasks", params)
+        .then((response) => response.json())
+        .then((data) => {
      data.reduce((accumulator: Task, currentValue: Task) => {
         if (currentValue.id > accumulator.id ){
             this.task.id = currentValue.id;
