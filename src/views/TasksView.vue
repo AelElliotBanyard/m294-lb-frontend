@@ -22,14 +22,18 @@ export default defineComponent({
       ],
     };
   },
-  setup() {
-    return {};
-  },
   components: { TasksComponent },
   mounted() {
-    fetch("http://zli.banyard.tech/tasks")
-      .then((response) => response.json())
-      .then((data) => (this.tasks = data));
+      const params = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + this.$jwtData.token,
+        },
+      };
+      fetch("http://zli.banyard.tech/auth/jwt/tasks", params)
+        .then((response) => response.json())
+        .then((data) => (this.tasks = data));
   },
 });
 </script>

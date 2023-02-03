@@ -34,6 +34,7 @@ export default defineComponent({
         this.signedIn = true;
       } else {
         this.signedIn = false;
+        console.log(oldval)
       }
     },
   },

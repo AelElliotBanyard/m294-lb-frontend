@@ -25,7 +25,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject } from "vue";
+import { defineComponent } from "vue";
 import ButtonComponent from "./ButtonComponent.vue";
 import InputComponent from "@/components/InputComponent.vue";
 
@@ -35,7 +35,6 @@ export default defineComponent({
     return {
       email: "",
       password: "",
-      emitter: inject("emitter"),
     };
   },
   props: {
@@ -71,9 +70,9 @@ export default defineComponent({
               alert("Error");
             }
           } else {
+            this.$jwtData.token = data.token
             this.$emit("update:token", data.token);
             this.$emit("update:signed", true);
-            this.emitter.emit("token", { token: data.token });
           }
         });
     },
