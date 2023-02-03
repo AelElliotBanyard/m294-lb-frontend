@@ -1,4 +1,4 @@
-# m294-lb-frontend
+# m294-lb-frontend Ael Banyard
 
 ## Project setup
 ```
@@ -20,5 +20,5 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Repo auf Github
+[AelElliotBanyard m294-lb-frontend](https://github.com/AelElliotBanyard/m294-lb-frontend).
