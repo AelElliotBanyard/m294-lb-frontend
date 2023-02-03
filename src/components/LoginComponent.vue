@@ -66,7 +66,7 @@ export default defineComponent({
         .then((data) => {
           if (data.statusCode != undefined) {
             if (data.statusCode === 400) {
-              alert("Email or Password wrong");
+              alert("Email or Passwor Wrong")
             } else {
               alert("Error");
             }
